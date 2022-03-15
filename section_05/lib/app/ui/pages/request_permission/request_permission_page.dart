@@ -12,7 +12,8 @@ class RequestPermissionPage extends StatefulWidget {
   _RequestPermissionPageState createState() => _RequestPermissionPageState();
 }
 
-class _RequestPermissionPageState extends State<RequestPermissionPage> with WidgetsBindingObserver {
+class _RequestPermissionPageState extends State<RequestPermissionPage>
+    with WidgetsBindingObserver {
   final _controller = RequestPermissionController(Permission.locationWhenInUse);
   late StreamSubscription _subscription;
   bool _fromSettings = false;
@@ -50,6 +51,15 @@ class _RequestPermissionPageState extends State<RequestPermissionPage> with Widg
                 ],
               ),
             );
+            break;
+          case PermissionStatus.denied:
+            // TODO: Handle this case.
+            break;
+          case PermissionStatus.restricted:
+            // TODO: Handle this case.
+            break;
+          case PermissionStatus.limited:
+            // TODO: Handle this case.
             break;
         }
       },
